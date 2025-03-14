@@ -1,0 +1,367 @@
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f5f5f5;
+    background: linear-gradient(to bottom, #f5f5f5, #f8e6e6);
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  /* Navegación */
+  nav {
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(245, 245, 245, 0.95);
+  }
+  
+  nav .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  nav ul li:first-child {
+    margin-right: auto;
+    font-weight: 600;
+  }
+  
+  nav ul li:first-child a {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
+  
+  nav ul li {
+    margin-left: 30px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    color: #999;
+  }
+  
+  /* Main Content */
+  #mainBody {
+    padding: 80px 0;
+    margin-top: 60px;
+    flex: 1;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  
+  /* Animación sutil al cargar la página */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Contenedor de acción */
+  .action-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    animation: fadeInUp 0.5s ease-out forwards;
+    animation-delay: 0.1s;
+    opacity: 0;
+  }
+  
+  /* Botón de nueva inscripción */
+  .new-inscripcion-button {
+    padding: 14px 28px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    color: white;
+    background: linear-gradient(to right, #e0c3fc, #8ec5fc);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .new-inscripcion-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Contenedor de inscripciones */
+  .inscripciones-container {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    padding: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    animation: fadeInUp 0.5s ease-out forwards;
+    animation-delay: 0.2s;
+    opacity: 0;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Barra de color superior */
+  .inscripciones-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(to right, #e0c3fc, #8ec5fc);
+    z-index: 1;
+  }
+  
+  /* Lista de inscripciones */
+  #inscripciones-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Animación para cada elemento de la lista */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Tarjetas de inscripciones */
+  #inscripciones-list li {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    position: relative;
+    border-left: 4px solid transparent;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.5s ease-out forwards;
+    opacity: 0;
+  }
+  
+  /* Retrasos escalonados para cada tarjeta */
+  #inscripciones-list li:nth-child(1) { animation-delay: 0.3s; }
+  #inscripciones-list li:nth-child(2) { animation-delay: 0.4s; }
+  #inscripciones-list li:nth-child(3) { animation-delay: 0.5s; }
+  #inscripciones-list li:nth-child(4) { animation-delay: 0.6s; }
+  #inscripciones-list li:nth-child(5) { animation-delay: 0.7s; }
+  
+  /* Diferentes colores para las barras laterales */
+  #inscripciones-list li:nth-child(4n+1) {
+    border-left-color: #e0c3fc;
+  }
+  
+  #inscripciones-list li:nth-child(4n+2) {
+    border-left-color: #a1c4fd;
+  }
+  
+  #inscripciones-list li:nth-child(4n+3) {
+    border-left-color: #fbc2eb;
+  }
+  
+  #inscripciones-list li:nth-child(4n+4) {
+    border-left-color: #84fab0;
+  }
+  
+  #inscripciones-list li:hover {
+    transform: translateX(5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  #inscripciones-list li .info {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+  }
+  
+  #inscripciones-list li .info strong {
+    color: #333;
+    font-weight: 600;
+  }
+  
+  /* Botón de cancelar */
+  .cancel-button {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    border-radius: 6px;
+    border: none;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    color: white;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+  }
+  
+  .cancel-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Mensaje cuando no hay inscripciones */
+  .no-inscripciones {
+    text-align: center;
+    padding: 30px;
+    color: #999;
+    font-style: italic;
+  }
+  
+  /* Footer */
+  footer {
+    padding: 30px 0;
+    background-color: #f5f5f5;
+    border-top: 1px solid #eee;
+    margin-top: auto;
+  }
+  
+  footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  footer p {
+    font-size: 0.8rem;
+    color: #999;
+  }
+  
+  .footer-links {
+    display: flex;
+    list-style: none;
+  }
+  
+  .footer-links li {
+    margin-left: 20px;
+  }
+  
+  .footer-links li a {
+    text-decoration: none;
+    color: #999;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links li a:hover {
+    color: #666;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    nav ul {
+      flex-wrap: wrap;
+    }
+    
+    nav ul li {
+      margin: 5px 10px;
+    }
+    
+    .inscripciones-container {
+      margin: 0 15px;
+      padding: 20px;
+    }
+    
+    .new-inscripcion-button {
+      width: 100%;
+    }
+    
+    footer .container {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .footer-links {
+      margin-top: 15px;
+      justify-content: center;
+    }
+    
+    .footer-links li {
+      margin: 0 10px;
+    }
+  }
+  
+  /* Estilos para estados de inscripciones */
+  .estado {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-left: 10px;
+  }
+  
+  .activa {
+    background-color: rgba(40, 167, 69, 0.2);
+    color: #28a745;
+  }
+  
+  .finalizada {
+    background-color: rgba(108, 117, 125, 0.2);
+    color: #6c757d;
+  }
+  
+  .cancelada {
+    background-color: rgba(220, 53, 69, 0.2);
+    color: #dc3545;
+  }

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema - Centros Cívicos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/sistema.css">
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="./index.html">Centros Cívicos</a></li>
+                <li><a href="./actividades.html">Actividades</a></li>
+                <li><a href="./instalaciones.html">Instalaciones</a></li>
+                <li id="reservas"><a href="./reservas.html">Reservas</a></li>
+                <li id="inscripciones"><a href="./inscripciones.html">Inscripciones</a></li>
+                <li id="sistema"><a href="./sistema.html">Usuario</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="mainBody">
+        <div class="container">
+            <h2 class="section-title">Gestión de Usuario</h2>
+            
+            <div class="user-container">
+                <div id="user-info">
+                    <p><strong>Nombre:</strong> <span id="user-name"></span></p>
+                    <p><strong>Email:</strong> <span id="user-email"></span></p>
+                </div>
+                <div id="seccionBotones">
+                    <button class="edit-button" onclick="window.location.href='./editUser.html'">Editar Usuario</button>
+                    <button class="refresh-button" onclick="refrescarToken()">Actualizar Token</button>
+                    <button class="logout-button" onclick="cerrarSesion()">Cerrar Sesión</button>
+                    <button class="delete-button" onclick="eliminarUsuario()">Eliminar Usuario</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Centros Cívicos. Todos los derechos reservados.</p>
+            <ul class="footer-links">
+                <li><a href="#">Política de privacidad</a></li>
+                <li><a href="#">Términos de uso</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="js/sistema.js"></script>
+</body>
+</html>

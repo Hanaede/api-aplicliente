@@ -1,0 +1,616 @@
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f5f5f5;
+    background: linear-gradient(to bottom, #f5f5f5, #f8e6e6);
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  /* Navegación */
+  nav {
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(245, 245, 245, 0.95);
+  }
+  
+  nav .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  nav ul li:first-child {
+    margin-right: auto;
+    font-weight: 600;
+  }
+  
+  nav ul li:first-child a {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
+  
+  nav ul li {
+    margin-left: 30px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    color: #999;
+  }
+  
+  /* Main Content */
+  #mainBody {
+    padding: 80px 0;
+    margin-top: 60px;
+    flex: 1;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  
+  /* Animación sutil al cargar la página */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Formulario de edición de usuario */
+  .form-container {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    padding: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    animation: fadeInUp 0.5s ease-out forwards;
+    animation-delay: 0.2s;
+    opacity: 0;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  /* Barra de color superior */
+  .form-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(to right, #e0c3fc, #8ec5fc);
+    z-index: 1;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #eee;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    color: #333;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+  }
+  
+  .form-group input:focus {
+    outline: none;
+    border-color: #e0c3fc;
+    box-shadow: 0 0 0 4px rgba(224, 195, 252, 0.1);
+  }
+  
+  .form-group input::placeholder {
+    color: #aaa;
+    font-style: italic;
+  }
+  
+  /* Mensajes de error y éxito */
+  .message {
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    display: none;
+  }
+  
+  .error {
+    background-color: #fff5f5;
+    color: #e53e3e;
+    border: 1px solid #fed7d7;
+  }
+  
+  .success {
+    background-color: #f0fff4;
+    color: #38a169;
+    border: 1px solid #c6f6d5;
+  }
+  
+  .text-danger {
+    color: #e53e3e;
+    font-weight: 500;
+    margin-top: 5px;
+    font-size: 0.85rem;
+  }
+  
+  /* Botones y acciones */
+  .form-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  button {
+    padding: 14px 28px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .submit-button {
+    color: white;
+    background: linear-gradient(to right, #e0c3fc, #8ec5fc);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .submit-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .cancel-button {
+    border: 2px solid #eee;
+    color: #666;
+    background: white;
+  }
+  
+  .cancel-button:hover {
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  /* Estilos para estados de botones */
+  button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
+  /* Estilos para campos con validación */
+  .form-group input.is-valid {
+    border-color: #38a169;
+    background-color: #f0fff4;
+  }
+  
+  .form-group input.is-invalid {
+    border-color: #e53e3e;
+    background-color: #fff5f5;
+  }
+  
+  /* Animación para mensajes */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .message.show {
+    display: block;
+    animation: fadeIn 0.3s ease-out forwards;
+  }
+  
+  /* Estilos para mostrar/ocultar contraseña */
+  .password-toggle {
+    position: relative;
+  }
+  
+  .password-toggle input {
+    padding-right: 40px;
+  }
+  
+  .password-toggle-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #999;
+    transition: color 0.3s;
+  }
+  
+  .password-toggle-icon:hover {
+    color: #333;
+  }
+  
+  /* Estilos para indicadores de fortaleza de contraseña */
+  .password-strength {
+    margin-top: 8px;
+    height: 5px;
+    border-radius: 3px;
+    background-color: #eee;
+    overflow: hidden;
+  }
+  
+  .password-strength-meter {
+    height: 100%;
+    width: 0;
+    transition: width 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .strength-weak {
+    width: 25%;
+    background-color: #e53e3e;
+  }
+  
+  .strength-medium {
+    width: 50%;
+    background-color: #f6ad55;
+  }
+  
+  .strength-good {
+    width: 75%;
+    background-color: #68d391;
+  }
+  
+  .strength-strong {
+    width: 100%;
+    background-color: #38a169;
+  }
+  
+  .password-strength-text {
+    font-size: 0.75rem;
+    margin-top: 5px;
+    color: #666;
+  }
+  
+  /* Estilos para requisitos de contraseña */
+  .password-requirements {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    color: #666;
+  }
+  
+  .password-requirements ul {
+    list-style: none;
+    padding-left: 5px;
+  }
+  
+  .password-requirements li {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .password-requirements li::before {
+    content: '•';
+    margin-right: 8px;
+    color: #999;
+  }
+  
+  .password-requirements li.met::before {
+    content: '✓';
+    color: #38a169;
+  }
+  
+  /* Estilos para avatar o foto de perfil */
+  .profile-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: block;
+    object-fit: cover;
+    border: 3px solid white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .avatar-upload {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .avatar-upload label {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #f5f5f5;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: #666;
+    transition: all 0.3s ease;
+  }
+  
+  .avatar-upload label:hover {
+    background: #eee;
+    color: #333;
+  }
+  
+  .avatar-upload input[type="file"] {
+    display: none;
+  }
+  
+  /* Footer */
+  footer {
+    padding: 30px 0;
+    background-color: #f5f5f5;
+    border-top: 1px solid #eee;
+    margin-top: auto;
+  }
+  
+  footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  footer p {
+    font-size: 0.8rem;
+    color: #999;
+  }
+  
+  .footer-links {
+    display: flex;
+    list-style: none;
+  }
+  
+  .footer-links li {
+    margin-left: 20px;
+  }
+  
+  .footer-links li a {
+    text-decoration: none;
+    color: #999;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links li a:hover {
+    color: #666;
+  }
+  
+  /* Estilos para secciones adicionales */
+  .form-section {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+  }
+  
+  .form-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  
+  .form-section-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  /* Estilos para opciones de eliminación de cuenta */
+  .danger-zone {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px dashed #fed7d7;
+  }
+  
+  .danger-zone-title {
+    color: #e53e3e;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+  
+  .delete-account-button {
+    background: white;
+    color: #e53e3e;
+    border: 1px solid #fed7d7;
+  }
+  
+  .delete-account-button:hover {
+    background: #fff5f5;
+    transform: none;
+  }
+  
+  /* Estilos para confirmación de eliminación */
+  .confirmation-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .confirmation-dialog.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .confirmation-content {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  .confirmation-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #e53e3e;
+  }
+  
+  .confirmation-message {
+    margin-bottom: 20px;
+    color: #666;
+  }
+  
+  .confirmation-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .confirm-delete {
+    background: #e53e3e;
+    color: white;
+  }
+  
+  .confirm-delete:hover {
+    background: #c53030;
+  }
+  
+  .cancel-delete {
+    background: white;
+    color: #666;
+    border: 1px solid #eee;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    nav ul {
+      flex-wrap: wrap;
+    }
+    
+    nav ul li {
+      margin: 5px 10px;
+    }
+    
+    .form-container {
+      margin: 0 15px;
+      padding: 20px;
+    }
+    
+    .form-actions {
+      flex-direction: column;
+    }
+    
+    footer .container {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .footer-links {
+      margin-top: 15px;
+      justify-content: center;
+    }
+    
+    .footer-links li {
+      margin: 0 10px;
+    }
+  }
+  
+  /* Estilos para pantallas muy pequeñas */
+  @media (max-width: 480px) {
+    .section-title {
+      font-size: 1.5rem;
+    }
+    
+    .form-group label {
+      font-size: 0.85rem;
+    }
+    
+    .form-group input {
+      padding: 12px 14px;
+      font-size: 0.9rem;
+    }
+    
+    button {
+      padding: 12px 20px;
+      font-size: 0.9rem;
+    }
+    
+    .confirmation-content {
+      padding: 20px;
+    }
+  }

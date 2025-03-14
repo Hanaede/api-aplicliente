@@ -1,0 +1,686 @@
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f5f5f5;
+    background: linear-gradient(to bottom, #f5f5f5, #f8e6e6);
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  /* Navegación */
+  nav {
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(245, 245, 245, 0.95);
+  }
+  
+  nav .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  nav ul li:first-child {
+    margin-right: auto;
+    font-weight: 600;
+  }
+  
+  nav ul li:first-child a {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
+  
+  nav ul li {
+    margin-left: 30px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    color: #999;
+  }
+  
+  /* Main Content */
+  #mainBody {
+    padding: 80px 0;
+    margin-top: 60px;
+    flex: 1;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  
+  /* Animación sutil al cargar la página */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Contenedor de acción */
+  .action-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    animation: fadeInUp 0.5s ease-out forwards;
+    animation-delay: 0.1s;
+    opacity: 0;
+  }
+  
+  /* Botón de nueva reserva */
+  .new-reserva-button {
+    padding: 14px 28px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    color: white;
+    background: linear-gradient(to right, #e0c3fc, #8ec5fc);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .new-reserva-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Contenedor de reservas */
+  .reservas-container {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    padding: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    animation: fadeInUp 0.5s ease-out forwards;
+    animation-delay: 0.2s;
+    opacity: 0;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Barra de color superior */
+  .reservas-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(to right, #e0c3fc, #8ec5fc);
+    z-index: 1;
+  }
+  
+  /* Lista de reservas */
+  #reservas-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Animación para cada elemento de la lista */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Tarjetas de reservas */
+  #reservas-list li {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    position: relative;
+    border-left: 4px solid transparent;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.5s ease-out forwards;
+    opacity: 0;
+  }
+  
+  /* Retrasos escalonados para cada tarjeta */
+  #reservas-list li:nth-child(1) { animation-delay: 0.3s; }
+  #reservas-list li:nth-child(2) { animation-delay: 0.4s; }
+  #reservas-list li:nth-child(3) { animation-delay: 0.5s; }
+  #reservas-list li:nth-child(4) { animation-delay: 0.6s; }
+  #reservas-list li:nth-child(5) { animation-delay: 0.7s; }
+  
+  /* Diferentes colores para las barras laterales */
+  #reservas-list li:nth-child(4n+1) {
+    border-left-color: #e0c3fc;
+  }
+  
+  #reservas-list li:nth-child(4n+2) {
+    border-left-color: #a1c4fd;
+  }
+  
+  #reservas-list li:nth-child(4n+3) {
+    border-left-color: #fbc2eb;
+  }
+  
+  #reservas-list li:nth-child(4n+4) {
+    border-left-color: #84fab0;
+  }
+  
+  #reservas-list li:hover {
+    transform: translateX(5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  #reservas-list li .info {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+  }
+  
+  #reservas-list li .info strong {
+    color: #333;
+    font-weight: 600;
+  }
+  
+  /* Botón de cancelar */
+  .cancel-button {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    border-radius: 6px;
+    border: none;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    color: white;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+  }
+  
+  .cancel-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Mensaje cuando no hay reservas */
+  .no-reservas {
+    text-align: center;
+    padding: 30px;
+    color: #999;
+    font-style: italic;
+  }
+  
+  /* Footer */
+  footer {
+    padding: 30px 0;
+    background-color: #f5f5f5;
+    border-top: 1px solid #eee;
+    margin-top: auto;
+  }
+  
+  footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  footer p {
+    font-size: 0.8rem;
+    color: #999;
+  }
+  
+  .footer-links {
+    display: flex;
+    list-style: none;
+  }
+  
+  .footer-links li {
+    margin-left: 20px;
+  }
+  
+  .footer-links li a {
+    text-decoration: none;
+    color: #999;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links li a:hover {
+    color: #666;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    nav ul {
+      flex-wrap: wrap;
+    }
+    
+    nav ul li {
+      margin: 5px 10px;
+    }
+    
+    .reservas-container {
+      margin: 0 15px;
+      padding: 20px;
+    }
+    
+    .new-reserva-button {
+      width: 100%;
+    }
+    
+    footer .container {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .footer-links {
+      margin-top: 15px;
+      justify-content: center;
+    }
+    
+    .footer-links li {
+      margin: 0 10px;
+    }
+  }
+  
+  /* Estilos para estados de reservas */
+  .estado {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-left: 10px;
+  }
+  
+  .pendiente {
+    background-color: rgba(255, 193, 7, 0.2);
+    color: #d39e00;
+  }
+  
+  .confirmada {
+    background-color: rgba(40, 167, 69, 0.2);
+    color: #28a745;
+  }
+  
+  .cancelada {
+    background-color: rgba(220, 53, 69, 0.2);
+    color: #dc3545;
+  }
+  
+  /* Estilos para fechas y horas */
+  .fecha-hora {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .fecha-hora svg {
+    margin-right: 8px;
+    color: #666;
+  }
+  
+  /* Estilos para detalles adicionales */
+  .detalles {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 15px;
+    font-size: 0.9rem;
+  }
+  
+  .detalles h4 {
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  /* Estilos adicionales para formularios de nueva reserva */
+  .form-container {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    position: relative;
+    padding: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .form-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(to right, #e0c3fc, #8ec5fc);
+    z-index: 1;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #eee;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    color: #333;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #e0c3fc;
+    box-shadow: 0 0 0 4px rgba(224, 195, 252, 0.1);
+  }
+  
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: #aaa;
+    font-style: italic;
+  }
+  
+  .form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+  
+  .form-actions button {
+    flex: 1;
+    margin: 0 10px;
+  }
+  
+  .form-actions button:first-child {
+    margin-left: 0;
+  }
+  
+  .form-actions button:last-child {
+    margin-right: 0;
+  }
+  
+  .submit-button {
+    background: linear-gradient(to right, #84fab0, #8fd3f4);
+  }
+  
+  .cancel-form-button {
+    background: white;
+    color: #333;
+    border: 2px solid #eee;
+  }
+  
+  .cancel-form-button:hover {
+    background: #f9f9f9;
+    color: #666;
+  }
+  
+  /* Estilos para mensajes de éxito o error */
+  .message {
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+  }
+  
+  .success {
+    background-color: #f0fff4;
+    color: #38a169;
+    border: 1px solid #c6f6d5;
+  }
+  
+  .error {
+    background-color: #fff5f5;
+    color: #e53e3e;
+    border: 1px solid #fed7d7;
+  }
+  
+  /* Estilos para la página de detalles de reserva */
+  .reserva-detalle {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    position: relative;
+    padding: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .reserva-detalle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(to right, #e0c3fc, #8ec5fc);
+    z-index: 1;
+  }
+  
+  .reserva-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .reserva-header h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .reserva-info {
+    margin-bottom: 30px;
+  }
+  
+  .reserva-info p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  .reserva-info p strong {
+    color: #333;
+    font-weight: 600;
+    margin-right: 10px;
+  }
+  
+  .reserva-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+  }
+  
+  .reserva-actions button {
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  
+  /* Estilos para calendario o selector de fechas */
+  .calendario {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .calendario-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .calendario-header h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .calendario-nav {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .calendario-nav button {
+    background: transparent;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 5px;
+    transition: color 0.3s ease;
+  }
+  
+  .calendario-nav button:hover {
+    color: #333;
+  }
+  
+  .calendario-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+  }
+  
+  .calendario-dia {
+    text-align: center;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .calendario-dia:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .calendario-dia.active {
+    background-color: rgba(224, 195, 252, 0.2);
+    color: #8a63d2;
+    font-weight: 600;
+  }
+  
+  .calendario-dia.disabled {
+    color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Estilos para selector de horas */
+  .selector-horas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .hora {
+    padding: 8px 12px;
+    border-radius: 4px;
+    background-color: #f5f5f5;
+    color: #666;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .hora:hover {
+    background-color: #eee;
+  }
+  
+  .hora.active {
+    background-color: rgba(224, 195, 252, 0.2);
+    color: #8a63d2;
+    font-weight: 600;
+  }
+  
+  .hora.disabled {
+    color: #ccc;
+    background-color: #f9f9f9;
+    cursor: not-allowed;
+  }

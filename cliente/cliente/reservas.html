@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas - Centros Cívicos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/reservas.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="./index.html">Centros Cívicos</a></li>
+                <li><a href="./actividades.html">Actividades</a></li>
+                <li><a href="./instalaciones.html">Instalaciones</a></li>
+                <li id="reservas"><a href="./reservas.html">Reservas</a></li>
+                <li id="inscripciones"><a href="./inscripciones.html">Inscripciones</a></li>
+                <li id="sistema"><a href="./sistema.html">Usuario</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="mainBody">
+        <div class="container">
+            <h2 class="section-title">Mis Reservas</h2>
+            
+            <div class="action-container">
+                <button class="new-reserva-button" onclick="window.location.href='./nueva_reserva.html'">Nueva reserva</button>
+            </div>
+            
+            <div class="reservas-container">
+                <ul id="reservas-list"></ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Centros Cívicos. Todos los derechos reservados.</p>
+            <ul class="footer-links">
+                <li><a href="#">Política de privacidad</a></li>
+                <li><a href="#">Términos de uso</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
+    <script src="./js/reservas.js"></script>
+</body>
+</html>

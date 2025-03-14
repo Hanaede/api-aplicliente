@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripciones - Centros Cívicos</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="./css/inscripciones.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="./index.html">Centros Cívicos</a></li>
+                <li><a href="./actividades.html">Actividades</a></li>
+                <li><a href="./instalaciones.html">Instalaciones</a></li>
+                <li id="reservas"><a href="./reservas.html">Reservas</a></li>
+                <li id="inscripciones"><a href="./inscripciones.html">Inscripciones</a></li>
+                <li id="sistema"><a href="./sistema.html">Usuario</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="mainBody">
+        <div class="container">
+            <h2 class="section-title">Mis Inscripciones</h2>
+            
+            <div class="action-container">
+                <button class="new-inscripcion-button" onclick="window.location.href='./nueva_inscripcion.html'">Nueva inscripción</button>
+            </div>
+            
+            <div class="inscripciones-container">
+                <ul id="inscripciones-list"></ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Centros Cívicos. Todos los derechos reservados.</p>
+            <ul class="footer-links">
+                <li><a href="#">Política de Privacidad</a></li>
+                <li><a href="#">Términos de Uso</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
+    <script src="./js/inscripciones.js"></script>
+</body>
+</html>

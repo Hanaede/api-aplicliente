@@ -1,0 +1,311 @@
+/* Reset y estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Navegación */
+nav {
+  padding: 20px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(245, 245, 245, 0.95);
+}
+
+nav .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  width: 100%;
+  justify-content: space-between;
+}
+
+nav ul li:first-child {
+  margin-right: auto;
+  font-weight: 600;
+}
+
+nav ul li:first-child a {
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+nav ul li {
+  margin-left: 30px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #999;
+}
+
+/* Hero Section */
+.hero-section {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+  overflow: hidden;
+  background-color: #f0f0f0;
+  background-image: url('../img/centrocivico.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.hero-content p {
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  letter-spacing: 1px;
+}
+
+/* Main Content */
+#mainBody {
+  padding: 80px 0;
+  background: linear-gradient(to bottom, #f5f5f5, #f8e6e6);
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 50px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Estilos para la lista de centros generada por JS */
+#centros-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+  padding: 0;
+}
+
+#centros-list > li {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#centros-list > li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+#centros-list h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+  color: #333;
+  letter-spacing: 0.5px;
+}
+
+#centros-list .info {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Estilos para las sublistas (instalaciones y actividades) */
+#centros-list ul {
+  list-style: none;
+  margin-top: 25px;
+  border-top: 1px solid #eee;
+  padding-top: 25px;
+}
+
+.listas {
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  padding: 20px;
+  margin-bottom: 15px;
+  transition: transform 0.2s ease;
+}
+
+.listas:hover {
+  transform: translateX(5px);
+}
+
+.listas strong {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.listas .info {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Estilos específicos para instalaciones y actividades */
+.instalaciones {
+  border-left: 3px solid #e0c3fc;
+}
+
+.actividades {
+  border-left: 3px solid #8ec5fc;
+}
+
+
+/* Footer */
+footer {
+  padding: 30px 0;
+  background-color: #f5f5f5;
+  border-top: 1px solid #eee;
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer p {
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.footer-links {
+  display: flex;
+  list-style: none;
+}
+
+.footer-links li {
+  margin-left: 20px;
+}
+
+.footer-links li a {
+  text-decoration: none;
+  color: #999;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.footer-links li a:hover {
+  color: #666;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav ul {
+    flex-wrap: wrap;
+  }
+  
+  nav ul li {
+    margin: 5px 10px;
+  }
+  
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  #centros-list {
+    grid-template-columns: 1fr;
+  }
+  
+  footer .container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-links {
+    margin-top: 15px;
+    justify-content: center;
+  }
+  
+  .footer-links li {
+    margin: 0 10px;
+  }
+}
+
+/* Añadir esto al final del CSS para la numeración de proyectos */
+.project-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.project-navigation .number,
+.project-navigation .line {
+  display: inline-block;
+}
+
+.project-navigation .number {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0 5px;
+}
+
+.project-navigation .line {
+  height: 1px;
+  width: 15px;
+  background-color: #ccc;
+  margin: 0 2px;
+}

@@ -1,0 +1,322 @@
+/* Estructura para mantener el footer abajo */
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(to bottom, #f5f5f5, #f8e6e6);
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+  
+  #mainBody {
+    flex: 1;
+    margin-top: 80px;
+    padding-bottom: 60px;
+  }
+  
+  footer {
+    margin-top: auto;
+    background-color: #f5f5f5;
+    border-top: 1px solid #eee;
+    padding: 30px 0;
+  }
+  
+  /* Estilos mejorados para los inputs */
+  .form-group {
+    flex: 1;
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #eee;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    color: #333;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+  }
+  
+  .form-group input:focus {
+    outline: none;
+    border-color: #e0c3fc;
+    box-shadow: 0 0 0 4px rgba(224, 195, 252, 0.1);
+  }
+  
+  .form-group input::placeholder {
+    color: #aaa;
+    font-style: italic;
+  }
+  
+  /* Estilos para el hover de los inputs */
+  .form-group input:hover {
+    border-color: #d0d0d0;
+  }
+  
+  /* Contenedor de búsqueda mejorado */
+  .search-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    margin-bottom: 40px;
+    border: 1px solid #f0f0f0;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 30px;
+  }
+  
+  /* Contenedor de instalaciones */
+  .instalaciones-container {
+    margin-top: 30px;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 50px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  
+  #mensajeError {
+    background-color: #fff5f5;
+    color: #e53e3e;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    display: none;
+  }
+  
+  #mensajeError.visible {
+    display: block;
+  }
+  
+  /* Animación sutil al cargar la página */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Lista de instalaciones con animaciones */
+  #instalaciones-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 0;
+    margin-top: 40px;
+  }
+  
+  /* Tarjetas de instalaciones con animaciones */
+  #instalaciones-list li {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    padding: 0;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    animation: fadeInUp 0.5s ease-out forwards;
+    opacity: 0;
+    padding: 2rem;
+  }
+  
+  /* Retrasos escalonados para cada tarjeta */
+  #instalaciones-list li:nth-child(1) { animation-delay: 0.1s; }
+  #instalaciones-list li:nth-child(2) { animation-delay: 0.2s; }
+  #instalaciones-list li:nth-child(3) { animation-delay: 0.3s; }
+  #instalaciones-list li:nth-child(4) { animation-delay: 0.4s; }
+  #instalaciones-list li:nth-child(5) { animation-delay: 0.5s; }
+  #instalaciones-list li:nth-child(6) { animation-delay: 0.6s; }
+  #instalaciones-list li:nth-child(7) { animation-delay: 0.7s; }
+  #instalaciones-list li:nth-child(8) { animation-delay: 0.8s; }
+  
+  /* Barra de color superior */
+  #instalaciones-list li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    z-index: 1;
+  }
+  
+  /* Diferentes colores para las barras superiores */
+  #instalaciones-list li:nth-child(4n+1)::before {
+    background: linear-gradient(to right, #e0c3fc, #8ec5fc);
+  }
+  
+  #instalaciones-list li:nth-child(4n+2)::before {
+    background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+  }
+  
+  #instalaciones-list li:nth-child(4n+3)::before {
+    background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+  }
+  
+  #instalaciones-list li:nth-child(4n+4)::before {
+    background: linear-gradient(to right, #84fab0, #8fd3f4);
+  }
+  
+  /* Efecto hover mejorado */
+  #instalaciones-list li:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Contenido de la tarjeta */
+  #instalaciones-list li h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0;
+    padding: 25px 25px 10px;
+    color: #333;
+    position: relative;
+  }
+  
+  /* Icono decorativo para cada instalación */
+  #instalaciones-list li h3::after {
+    content: '🏛️';
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 1.2rem;
+    opacity: 0.7;
+  }
+  
+  #instalaciones-list li p {
+    padding: 0 25px 15px;
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+  
+
+  
+  /* Destacar fechas y horarios */
+  #instalaciones-list li .info span {
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  /* Destacar capacidad máxima */
+  #instalaciones-list li .info span:last-child {
+    margin-top: 15px;
+    font-weight: 600;
+    color: #333;
+    background: rgba(224, 195, 252, 0.1);
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #f5f5f5;
+    border-top: 1px solid #eee;
+    padding: 30px 0;
+    margin-top: auto;
+  }
+  
+  footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  footer p {
+    font-size: 0.8rem;
+    color: #999;
+  }
+  
+  .footer-links {
+    display: flex;
+    list-style: none;
+  }
+  
+  .footer-links li {
+    margin-left: 20px;
+  }
+  
+  .footer-links li a {
+    text-decoration: none;
+    color: #999;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links li a:hover {
+    color: #666;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    nav ul {
+      flex-wrap: wrap;
+    }
+    
+    nav ul li {
+      margin: 5px 10px;
+    }
+    
+    .form-row {
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    #instalaciones-list {
+      grid-template-columns: 1fr;
+    }
+    
+    .form-group input {
+      padding: 12px 14px;
+    }
+  
+    #instalaciones-list li:hover {
+      transform: translateY(-10px) scale(1.01);
+    }
+    
+    footer .container {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .footer-links {
+      margin-top: 15px;
+      justify-content: center;
+    }
+    
+    .footer-links li {
+      margin: 0 10px;
+    }
+  }
